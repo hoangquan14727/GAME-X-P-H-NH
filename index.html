@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>GAME XẾP HÌNH</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="game-card">
+      <div class="play-area" style="gap: 1rem">
+        <button id="btn-action" class="btn-start">
+          <span class="material-icons">play_arrow</span>
+          <span id="btn-text">Bắt đầu</span>
+        </button>
+      </div>
+      <div class="layout-grid">
+        <div class="puzzle-container">
+          <div id="grid" class="puzzle-grid"></div>
+        </div>
+        <div class="stats-panel">
+          <div class="timer-box">
+            <h3 class="timer-title">Đồng Hồ</h3>
+            <div id="time" class="timer-display">00:00</div>
+          </div>
+          <div class="guide-box">
+            <h3 class="guide-title">Hướng Dẫn Di Chuyển</h3>
+            <div class="flex flex-col items-center gap-4">
+              <div class="arrow-grid">
+                <div></div>
+                <div class="key-cap">
+                  <span class="material-icons" style="font-size: 14px">north</span>
+                </div>
+                <div></div>
+                <div class="key-cap">
+                  <span class="material-icons" style="font-size: 14px">west</span>
+                </div>
+                <div class="key-cap">
+                  <span class="material-icons" style="font-size: 14px">south</span>
+                </div>
+                <div class="key-cap">
+                  <span class="material-icons" style="font-size: 14px">east</span>
+                </div>
+              </div>
+              <div class="arrow-grid" style="margin-top: 0.5rem">
+                <div></div>
+                <div class="key-cap">W</div>
+                <div></div>
+                <div class="key-cap">A</div>
+                <div class="key-cap">S</div>
+                <div class="key-cap">D</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="history-section">
+        <h3 class="history-title">Lịch Sử Lượt Chơi</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 3rem">#</th>
+                <th>Bước đi</th>
+                <th style="text-align: right">Thời Gian</th>
+              </tr>
+            </thead>
+            <tbody id="history-list"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="footer-text">
+      Sử dụng các phím mũi tên hoặc WASD để di chuyển các ô. Nhấn Bắt đầu để
+      bắt đầu trò chơi mới.
+    </p>
+
+    <div id="win-popup" class="popup-overlay hidden">
+      <div class="popup-content">
+        <h2 class="popup-title">YOU WIN!</h2>
+        <p class="popup-message">Chúc mừng! Bạn đã hoàn thành trò chơi.</p>
+        <button class="btn-primary" onclick="closePopup()">Đóng</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

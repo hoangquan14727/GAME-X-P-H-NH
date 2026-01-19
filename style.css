@@ -1,0 +1,318 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #0f172a;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.5rem;
+}
+
+.btn-theme {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  background-color: #e2e8f0;
+  color: #334155;
+  border: none;
+  cursor: pointer;
+}
+
+.game-card {
+  background-color: #ffffff;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border: 1px solid #f1f5f9;
+  margin-top: 20px;
+}
+
+.play-area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.btn-start{
+      background-color: #22c55e;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.5);
+  transition: transform 0.1s;
+}
+.btn-primary {
+  background-color: #22c55e;
+  color: white;
+  font-weight: bold;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.5);
+  transition: transform 0.1s;
+  margin-left: auto;
+margin-right: auto;
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+.btn-red {
+  background-color: #ef4444;
+  box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.5);
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .layout-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.puzzle-container {
+  background-color: #f8fafc;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.tile {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  border-radius: 0.75rem;
+  cursor: default;
+  user-select: none;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tile:hover {
+  transform: scale(1.02);
+  filter: brightness(0.95);
+}
+
+.tile-empty {
+  background-color: #0f172a;
+  box-shadow: inset 0 0 0 2px rgba(34, 197, 94, 0.5);
+}
+
+.tile-hint {
+  border: 4px solid #f59e0b;
+  transform: scale(0.95);
+}
+
+.stats-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timer-box {
+  background-color: #f0fdf4;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  border: 1px solid #dcfce7;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.timer-title {
+  color: #166534;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.timer-display {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: #14532d;
+}
+
+.guide-box {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #f1f5f9;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.guide-title {
+  color: #64748b;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.arrow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.25rem;
+  justify-items: center;
+  margin-bottom: 30px;
+  
+}
+
+.key-cap {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f5f9;
+  border-radius: 0.25rem;
+  color: #475569;
+  border-bottom: 2px solid #e2e8f0;
+  font-weight: bold;
+  font-size: 0.75rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.history-section {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.history-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+}
+
+.table-container {
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th {
+  background-color: #f8fafc;
+  padding: 1rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  color: #475569;
+  border-top: 1px solid #f1f5f9;
+}
+
+.footer-text {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.875rem;
+}
+
+.tile-1 { background-color: #dcfce7; color: #166534; }
+.tile-2 { background-color: #fee2e2; color: #991b1b; }
+.tile-3 { background-color: #dbeafe; color: #1e40af; }
+.tile-4 { background-color: #f3e8ff; color: #6b21a8; }
+.tile-5 { background-color: #fef9c3; color: #854d0e; }
+.tile-6 { background-color: #fce7f3; color: #9d174d; }
+.tile-7 { background-color: #e0e7ff; color: #3730a3; }
+.tile-8 { background-color: #f3f4f6; color: #4b5563; }
+.tile-9 { background-color: #ccfbf1; color: #115e59; }
+.tile-10 { background-color: #ffedd5; color: #9a3412; }
+.tile-11 { background-color: #ecfccb; color: #3f6212; }
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.popup-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.popup-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  transform: scale(1);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid #f1f5f9;
+}
+
+.popup-overlay.hidden .popup-content {
+  transform: scale(0.9);
+}
+
+.popup-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #22c55e;
+  margin: 0 0 0.5rem 0;
+}
+
+.popup-message {
+  color: #475569;
+  margin-bottom: 1.5rem;
+}
+
+
